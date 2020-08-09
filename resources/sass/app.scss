@@ -1,5 +1,7 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Mulish:100,200,800');
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,700');
 
 // Variables
 @import 'variables';
@@ -7,9 +9,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.html {
-    color: #636363;
-    font-weight: 200;
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Mulish', sans-serif;
+    height: 100vh;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6, h7 {
@@ -17,7 +22,61 @@ h1, h2, h3, h4, h5, h6, h7 {
     font-weight: 200;
 }
 
+h1 {
+    font-family: "Nunito", sans-serif;
+    font-size: 5.5rem;
+    font-weight: 100;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.8rem;
+    font-weight: 400;
+}
+.banner {
+    font-weight: 200;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
 .navbar-light .navbar-brand {
+    font-family: "Nunito", sans-serif;
     color: #636363;
     font-weight: 200;
+}
+
+.breadcrumb {
+    padding-left: 0px;
+}
+
+.post-container {
+    padding: 0px 20px;
+
+    p {
+        font-size: 1.1rem;
+        font-family: Roboto;
+        font-weight: 300;
+
+        &.post-date {
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+    }
+}
+
+textarea .cke_editable {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+@media screen and (min-width: 420px) {
+    .post-container {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    .post-container {
+        width: 60%;
+    }
 }

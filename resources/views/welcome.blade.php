@@ -1,16 +1,18 @@
 @extends('base')
 
 @section('main')
-<div class="row">
-    <div class="col-sm-8 offset-2" style="padding-top: 100px;">
-        <h1 class="display-3">tsqware</h1>
-        <h4>This is where you see the site. {{ $whereAmI }}</h4>
+<div class="post-container mx-auto">
+    <div class="col">
+        <div class="col" style="padding: 40px 0 20px;">
+            <h1>tsqware</h1>
+            <h4 class="banner">Design. Development. Strategy</h4>
+        </div>
 
         @foreach ( $posts as $post )
         
             <div style="margin-top: 40px; padding-bottom:40px; margin-bottom: 40px; border-bottom: 1px solid #e6e6e6;">
                 <h2>{{ $post->title }}</h2>
-                <p>{{ date( "F j, Y, g:i:sa", strtotime($post->updated_at) ) }}</p>
+                <p class="post-date">{{ date( "F j, Y, g:i:sa", strtotime($post->updated_at) ) }}</p>
                 <div>
                     {!! $post->body !!}
                 </div>

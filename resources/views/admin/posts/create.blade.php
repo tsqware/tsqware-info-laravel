@@ -1,9 +1,9 @@
 @extends('admin.base')
 
-<!-- include ckeditor -->
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
 @section('main')
+<!-- include ckeditor -->
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
 <!-- Breadcrumb -->
 <nav aria-label="breadcrumb">
@@ -51,11 +51,18 @@
                 </div>
                 <div class="form-group">
                     <label for="body">Body:</label>
-                    <textarea class="form-control" name="body" style="height: 300px;"></textarea>
+                    <textarea name="body" style="height: 300px;"></textarea>
                     <script>
                         CKEDITOR.replace( 'body' );
                         console.log('ckeditor:', CKEDITOR.config);
                         CKEDITOR.config.height = 350;
+
+                        // This is actually the default value for it.
+                        CKEDITORconfig.fontSize_style = {
+                            element:        'span',
+                            styles:         { 'font-size': '#(20px)' },
+                            overrides:      [ { element: 'font', attributes: { 'size': null } } ]
+                        };
                     </script>
 
                 </div>
