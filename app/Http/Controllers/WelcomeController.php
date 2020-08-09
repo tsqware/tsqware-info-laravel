@@ -15,13 +15,14 @@ class WelcomeController extends Controller
      */
     public function index($slug='')
     {
-        $whereAmI = 'HOME FRONT';
+        $pageTitle = 'Welcome';
         if ( $slug != '' ) {
             $post = Post::where('slug', $slug)->first();
-            return view('posts.show', compact('post', 'whereAmI'));
+            $pageTitle = $post->title;
+            return view('posts.show', compact('post', 'pageTitle'));
         }
         $posts = Post::orderBy('updated_at', 'desc')->paginate(3);
 
-        return view('welcome', compact('posts', 'whereAmI'));
+        return view('welcome', compact('posts', 'pageTitle'));
     }
 }
